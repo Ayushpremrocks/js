@@ -1,0 +1,239 @@
+word vs keyword
+
+word-> word bs word hota hai
+keyword-> keyword wo hota hai jiska koi meaning hota hai js me
+
+
+var const let
+es5 js version me var aaya tha
+es6 js version me let and const aya tha
+var-> jisme data store krte hai, usko variable bolte hai, variable ke value change nh hoti
+const -> and constant ki value change ho jaati hai
+
+diff b/w var let const
+var old js me tha, let const new js version me tha
+var function scoped hota hai, let braces scoped hota hai
+var adds itself to the window object, let const doesnt adds 
+
+
+
+hoisting
+
+hosting and hoisting alag alag hai
+func and var that are hoisted can be declared on the top of class
+baaki jagah non defined aa jaata ha, but yaha undefined aata hai
+
+
+primitive and reference
+
+primitives=number,string
+reference = [] {} ()
+aisi koi bhi value jisko copy krne pe real copy nhi hota
+balki uss main value ka reference pass ho jaata hai, usko reference
+bolte hai
+aur jisme real value copy ho jaaye usko primitive bolte ha
+
+
+conditionals
+
+if else else-if
+
+if(true/false){
+
+}else if{
+
+}else{
+
+}
+
+
+loops
+
+for loop
+for(start;end;change)
+for(int i=0;i<10;i++){
+    console.log(i);
+}
+
+while(condition){
+
+}
+
+
+functions
+
+jab code reuse krna chahate ho
+and code abhi nhi baad me chalana chahate ho
+and code me diff parameters pass krwana ho tab
+
+function func(){
+
+}
+func();
+
+
+push pop shift unshift splice
+
+var arr=[1,2,3,4,5];
+arr.push(6);
+arr.pop(); //remove last value
+arr.unshift(0); //add value at starting
+arr.shift(); //to remove value at starting
+arr.splice(2); //remove value by indexing
+
+
+objects
+ek bande ki details ko hold krna
+1. blank object
+var a = {};
+
+2. filled object
+var a = {
+    age:21;
+    name: "Ayush Prem"
+}
+
+
+window
+
+js me kuch features aisi hai jo hum use krte hai
+but wo features js me nhi hai
+aise features js window se use krti hai
+
+
+browser context api
+contains windows, stack and heap memory
+
+
+stack
+lifo
+
+
+heap memory
+jitne bhi data etc hota hai usko jaha store krte hai
+usko heap memory bolte hai
+
+
+execution context
+jab bhi ham koi function ko run krte hai toh function apna ek
+imaginary container bana leta hai jisme wo yeh tin cheeze run karega
+
+
+it is a container where the function's code is executed and it is 
+always created whenever a function is called.
+
+1. variables
+2. functions inside that parent function
+3. lexical environment of that function
+
+
+lexical environment chart hota hai jo yeh btata hai ki 
+function kis cheezo ko access kr sakta hai and kis cheezo ko 
+access nhi kr sakta hai
+it holds its scope and scope chain
+
+
+how to copy reference values
+var a = [1,2,3,4,5];
+var b = [...a];
+b.pop();
+
+
+truthy and falsy
+falsy values = 0, false, undefined, null, NaN, document.all
+truthy values = jo falsy nhi hai
+
+ 
+switch
+switch(1){
+    case 1:
+        break;
+    case 2:
+        break;
+    default:
+}
+
+
+for each loop
+for each loop sirf array ke samay use krte hai
+var obj = {
+    name:
+    age:
+    city:
+}
+for(var key in obj){
+    console.log(key);
+}
+
+
+do while
+do{
+
+}
+while()
+
+
+callback functions
+aisa function jo baad me chalta ho 
+
+
+first class functions
+function ko as a value use kr sakte hai
+
+function abcd(a){
+    a();
+}
+abcd(function(){console.log("hey");})
+
+
+higher order function
+
+function abcd(val){
+    return function(){}
+}
+abcd(function(){})
+
+aisa function jo function as a parameter function accept kr le
+ya fir koi function return kr de
+
+
+constructor function
+jab similar properties wale multiple elements bana ne ho toh constructor function
+use kr sakte hai
+
+
+first class function
+function is used as values and arguments
+you can pass them as arguments
+
+
+new keyword
+new keyword creates a blank object for constructor function
+
+
+iife - immediately invoked function expression
+used to create private variable
+and function immediately run krtaa hai
+
+
+prototype
+every create object, it gets many properties called prototype
+
+
+prototype inheritance
+var human={
+    canFly: false,
+    canTalk: true,
+    canWalk: true,
+    haveEmotions: true,
+    hasFourLegs: false
+}
+
+var ayush = {
+    canCode = false;
+}
+
+ayush.__proto__ = human;
+
+
+this keyword
