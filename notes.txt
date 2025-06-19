@@ -237,3 +237,202 @@ ayush.__proto__ = human;
 
 
 this keyword
+
+jab bhi koi cheez {} ke andar nhi hoti, hum usse global scope kehte hai
+console.log(this);
+
+in global scope console.log(this); gives window
+
+in function scope
+function abcd(){
+    console.log(this); gives window
+}
+
+in method scope
+var obj = {
+    name: "ayush"
+    someMethod : function(){
+        console.log(this);
+    }
+} gives object obj
+
+in any method, "this" keyword always refers to parent object
+
+event listeners
+
+var button = document.querySelector("button");
+button.addEventListener("click",function(){
+    console.log(this);
+})
+
+this keyword is equal to whatever written before addEventListener,
+in this case button
+
+
+
+call apply bind
+
+call-> agar koi function aur object hai and tumhe function chalana hai
+aur by default jo this ki value hai usko window naah rakhke
+kisi aur object ki taraf point krwana hai
+
+function abcd(){
+    console.log(this.age);
+}
+var obj = {age:24}
+abcd.call(obj)
+
+apply ->
+function abcd(val1,val2,val3){
+    console.log(this, val1,val2,val3);
+}
+var obj = {age:24}
+abcd.apply(obj,[1,2,3])
+
+bind ->
+function abcd(){
+    console.log(this);
+}
+var obj = {age:24}
+var bindedFunc = abcd.bind(obj);
+bindedFunc();
+
+
+pure and impure functions
+pure function is any function which has these 2 features:
+1. it should always return same output for same input
+2. it will never change/update the value of a global variable
+
+
+
+async
+
+sync and async kya hota hai?
+sync matlab ki ek task ke baad dursa task hoga, aur jab tak phela
+task complete naah ho, dursa task khatam nhi hoga
+
+async me saare task ek sath chalu kr do, aur jo task phele khatam hua
+wo task phele answer de dega
+
+
+kaise pta chalega ki hum sync likh rhe ya async?
+async hamlog tab likhte hai jab hame pta nhi hota ki hame code ka answer
+kitne samay me wapas 
+
+async
+
+req bhejne ke liye
+
+setTimeout
+setInterval
+promises
+fetch
+axios
+XMLHttpRequest
+
+req wapas lene ke liye
+then
+catch
+callback
+async await
+
+
+sync
+baaki jo bche jo sync
+
+
+what is async js?
+kai baar aapka final code kisi aur server pe depend krta hai, iss case me
+hame pta nhi hota ki answer server se wapas kab laut ke aayega, aise samay
+pe hamlog async code likhte hai taaki blocking naah ho aur jab bhi 
+answer aaye toh hamare answer ke respect me code chal jaaye
+
+callback
+callback hamesa ek function hota hai, jo sirf jab chalta hai jab async code
+ka completion ho jaata hai
+
+
+promises
+promises tin states me ho sakta
+resolved, reject and pending
+
+example
+user will ask for a number b/w 0 and 9 if the number is below 5 resolve
+if not reject
+
+var ans = new Promise {(res,rej)} => {
+    var n = Math.floor(Math.random()*10);
+    if(n<5){
+        return res();
+    }else{
+        return rej();
+    }
+}
+
+ans.then(function(){
+    console.log("below");
+})
+    .catch(function(){
+        console.log("above");
+    })
+
+
+async await
+koi bhi aisa function jisme aap async cod likhenge, kyuki async code hai
+toh aap promises ka istemaal kr sakte hai, jab uska answer aayega toh
+aapko "then" lagana padega, us "then" ko lagane ke jagah aap "async await"
+ka use kr sakte ho
+
+
+real use cases
+node me database ka use
+fetch
+setTimeout
+setInterval
+Third-party
+
+
+concurrency
+sync and async code ko ek sath chalane ke process ko concurrency
+bolte hai
+
+
+parallelism
+focus jayda krta hai different processors aur uske cores pe
+
+
+throttling
+kisi code ka no of execution control krna
+
+
+DOM
+
+what is DOM?
+DOM is document object model
+
+4 pillars of DOM
+1. selection of an element
+2. changing html
+3. changing css
+4. event listener 
+
+1. selection of an element
+var a = document.querySelector("h1")
+console.log(a)
+
+2. changing html
+var a = document.querySelector("h1")
+a.innerHTML = "changed HTML"
+
+3. changing css
+var a = document.querySelector("h1")
+a.style.color = "red"
+a.style.backgroundColor = "blue"
+
+4. event listener
+var a = document.querySelector("h1")
+a.addEventListener("click",function(){
+    console.log("hey")
+})
+
+
